@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { IoAddOutline } from "react-icons/io5";
 
 interface ProductdetailsProps {}
 
@@ -22,14 +23,16 @@ const Productdetails: FC<ProductdetailsProps> = () => {
   }, []);
 
   return (
-    <div className="h-[85vh] w-[100vw] flex items-center justify-center">
-      <div className="flex flex-col items-center justify-around p-2 shadow-lg rounded-lg bg-gray-300 h-[50%] w-[90%] lg:h-[60%] lg:w-[50%]">
+    <div className="h-[85vh] w-[100vw] flex items-center bg-gray-500 justify-center">
+      <div className="flex flex-col items-center justify-around p-2 bg-gray-700 text-white shadow-lg rounded-lg bg-gray-300 h-[50%] w-[90%] lg:h-[60%] lg:w-[50%]">
         <div className=" p-2 md:h-[60%] md:w-[30%] h-[50%] w-[50%]">
           <img src={details.image} className="h-[100%] w-[100%]" alt="" />
         </div>
         <div className="font-bold text-center text-xl md:text-2xl">{details.name}</div>
         <div className="text-center text-xs w-[90%] md:text-sm md:w-[60%]">{details.description}</div>
-        <div className=" font-bold text-2xl md:text-xl">RS.{details.price}</div>
+        <div className="flex items-center w-[90%] justify-center">
+          <div className=" font-bold flex  text-2xl md:text-xl">RS.{details.price}</div>
+        </div>
       </div>
     </div>
   );
